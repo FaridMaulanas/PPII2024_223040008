@@ -45,10 +45,8 @@ public class Nasabah extends JFrame{
             }
         });
 
-
         JLabel labelTabungan = new JLabel("Jenis Tabungan");
         labelTabungan.setBounds(15,260,350,10);
-
 
         // TIPE JENIS REKENING MENGGUNAKAN SINGLE VALUE JLIST
         String[] tabungan = {"Junior", "Silver GPN", "Gold GPN", "Platinum GPN"};

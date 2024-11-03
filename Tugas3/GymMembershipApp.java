@@ -12,15 +12,15 @@ public class GymMembershipApp extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
-        // Inisialisasi form pendaftaran dan tabel anggota
+       
         formPendaftaran = new FormPendaftaran();
         tabelAnggota = new TabelAnggota();
 
-        // Tambahkan panel input dan tabel ke tampilan utama
+        
         add(formPendaftaran, BorderLayout.NORTH);
         add(new JScrollPane(tabelAnggota), BorderLayout.CENTER);
 
-        // Tombol untuk submit dan clear
+        // Tombol buat submit dan clear
         JPanel panelTombol = new JPanel();
         JButton btnSubmit = new JButton("Daftar");
         JButton btnClear = new JButton("Bersihkan");
@@ -28,14 +28,14 @@ public class GymMembershipApp extends JFrame {
         panelTombol.add(btnClear);
         add(panelTombol, BorderLayout.SOUTH);
 
-        // Aksi Tombol Submit
+       
         btnSubmit.addActionListener(e -> {
             Anggota anggotaBaru = formPendaftaran.getDataAnggota();
             tabelAnggota.tambahAnggota(anggotaBaru);
             formPendaftaran.bersihkanForm();
         });
 
-        // Aksi Tombol Clear
+       
         btnClear.addActionListener(e -> formPendaftaran.bersihkanForm());
     }
 

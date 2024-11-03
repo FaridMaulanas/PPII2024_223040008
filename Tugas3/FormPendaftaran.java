@@ -17,7 +17,7 @@ public class FormPendaftaran extends JPanel {
         gbc.insets = new Insets(5, 5, 5, 5); // Buwat margin di antara komponen
         gbc.fill = GridBagConstraints.HORIZONTAL; // biar komponen memperluas secara horizontal
 
-        // Baris pertama: Nama
+        // buat Nama
         gbc.gridx = 0;
         gbc.gridy = 0;
         add(new JLabel("Nama:"), gbc);
@@ -26,7 +26,7 @@ public class FormPendaftaran extends JPanel {
         txtNama = new JTextField(20);
         add(txtNama, gbc);
 
-        // Baris kedua: Email
+        // buat Email
         gbc.gridx = 0;
         gbc.gridy = 1;
         add(new JLabel("Email:"), gbc);
@@ -35,7 +35,7 @@ public class FormPendaftaran extends JPanel {
         txtEmail = new JTextField(20);
         add(txtEmail, gbc);
 
-        // Baris ketiga: Telepon
+        // buat Telepon
         gbc.gridx = 0;
         gbc.gridy = 2;
         add(new JLabel("Telepon:"), gbc);
@@ -44,7 +44,7 @@ public class FormPendaftaran extends JPanel {
         txtTelepon = new JTextField(20);
         add(txtTelepon, gbc);
 
-        // Baris keempat: Alamat
+        // buat Alamat
         gbc.gridx = 0;
         gbc.gridy = 3;
         add(new JLabel("Alamat:"), gbc);
@@ -53,7 +53,7 @@ public class FormPendaftaran extends JPanel {
         txtAlamat = new JTextArea(3, 20);
         add(new JScrollPane(txtAlamat), gbc);
 
-        // Baris kelima: Paket Keanggotaan
+        // buat Paket Keanggotaan
         gbc.gridx = 0;
         gbc.gridy = 4;
         add(new JLabel("Paket Keanggotaan:"), gbc);
@@ -72,7 +72,7 @@ public class FormPendaftaran extends JPanel {
         panelPaket.add(rbVIP);
         add(panelPaket, gbc);
 
-        // Baris keenam: Layanan Tambahan
+        // buat Layanan Tambahan
         gbc.gridx = 0;
         gbc.gridy = 5;
         add(new JLabel("Layanan Tambahan:"), gbc);
@@ -85,7 +85,7 @@ public class FormPendaftaran extends JPanel {
         panelLayanan.add(cbKelasGrup);
         add(panelLayanan, gbc);
 
-        // Baris ketujuh: Durasi Keanggotaan
+        // buat: Durasi Keanggotaan
         gbc.gridx = 0;
         gbc.gridy = 6;
         add(new JLabel("Durasi Keanggotaan:"), gbc);
@@ -94,7 +94,7 @@ public class FormPendaftaran extends JPanel {
         cbDurasi = new JComboBox<>(new String[]{"1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun"});
         add(cbDurasi, gbc);
 
-        // Baris kedelapan: Minat
+        // buat buat Minat
         gbc.gridx = 0;
         gbc.gridy = 7;
         add(new JLabel("Minat:"), gbc);
@@ -104,7 +104,7 @@ public class FormPendaftaran extends JPanel {
         listMinat.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         add(new JScrollPane(listMinat), gbc);
 
-        // Baris kesembilan: Tingkat Kebugaran
+        // buat Tingkat Kebugaran
         gbc.gridx = 0;
         gbc.gridy = 8;
         add(new JLabel("Tingkat Kebugaran:"), gbc);
@@ -116,7 +116,7 @@ public class FormPendaftaran extends JPanel {
         sliderKebugaran.setPaintLabels(true);
         add(sliderKebugaran, gbc);
 
-        // Baris kesepuluh: Umur
+        // buat Umur
         gbc.gridx = 0;
         gbc.gridy = 9;
         add(new JLabel("Umur:"), gbc);
@@ -126,7 +126,7 @@ public class FormPendaftaran extends JPanel {
         add(spinnerUmur, gbc);
     }
 
-    // Mendapatkan data dari form untuk ditambahkan ke tabel
+    // dapetin data dari form buat ditambah ke tabel
     public Anggota getDataAnggota() {
         String nama = txtNama.getText();
         String email = txtEmail.getText();
@@ -139,7 +139,7 @@ public class FormPendaftaran extends JPanel {
         return new Anggota(nama, email, telepon, paket, durasi, umur);
     }
 
-    // Membersihkan form input
+    // bersihin form input
     public void bersihkanForm() {
         txtNama.setText("");
         txtEmail.setText("");

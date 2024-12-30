@@ -36,12 +36,6 @@ public class MainFrame  {
                         return null;
                     }
 
-/*************  ✨ Codeium Command ⭐  *************/
-            /**
-             * Update the progress bar with the latest progress
-             * @param chunks the list of published progress
-             */
-/******  c5e46548-8d38-49fe-b9cf-1c1c8713b1c0  *******/
                     @Override
                     protected void process(List<Integer> chunks) {
                         int latestProgress = chunks.get(chunks.size() - 1);

@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.awt.*;
 import java.util.List;
+import javax.swing.*;
 
 public class MainFrame  {
     public static void main(String[] args) {
@@ -23,19 +23,43 @@ public class MainFrame  {
             frame.add(startButton, BorderLayout.SOUTH);
 
             startButton.addActionListener(e -> {
-
-                for (int i = 0; i < 60; i++) {
-                    progressBar.setValue(i);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                        System.err.println(ex.getMessage());
+                startButton.setEnabled(false);
+                statusLabel.setText("Mengerjakan tugas berat...");
+              
+                SwingWorker<Void, Integer> worker = new SwingWorker<>() {
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        for (int i = 0; i <= 100; i++) {
+                            Thread.sleep(50);
+                            publish(i);
+                        }
+                        return null;
                     }
-                    }
-                });
 
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
+/*************  ✨ Codeium Command ⭐  *************/
+            /**
+             * Update the progress bar with the latest progress
+             * @param chunks the list of published progress
+             */
+/******  c5e46548-8d38-49fe-b9cf-1c1c8713b1c0  *******/
+                    @Override
+                    protected void process(List<Integer> chunks) {
+                        int latestProgress = chunks.get(chunks.size() - 1);
+                        progressBar.setValue(latestProgress);
+                    }
+
+                    @Override
+                    protected void done() {
+                        startButton.setEnabled(true);
+                        statusLabel.setText("proses selesai");
+                    }
+                };
+
+                worker.execute();
             });
-        }
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        });
+
+    }
 }
